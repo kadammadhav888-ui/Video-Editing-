@@ -152,7 +152,7 @@ nav ul a:hover {
 
 /* Sections */
 section {
-  padding: 70px 6vw;
+  padding: 65px 6vw;
   max-width: 1150px;
   margin: auto;
 }
@@ -296,12 +296,41 @@ h2 em {
   margin: auto;
   width: 100%;
 }
-.t1 { background: linear-gradient(135deg, #ff9a0e, #6b2a00); }
-.t2 { background: linear-gradient(135deg, #2b6cff, #0b1a3d); }
-.t3 { background: linear-gradient(135deg, #e8c35a, #3a2c00); }
-.t4 { background: linear-gradient(135deg, #ec4899, #3d0b25); }
-.t5 { background: linear-gradient(135deg, #10b981, #06322b); }
-.t6 { background: linear-gradient(135deg, #a855f7, #2a1048); }
+
+/* Stylized Work Covers for Selected Work */
+.th-cover {
+  aspect-ratio: 16/9;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.th-cover span {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 26px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+.th-cover small {
+  font-size: 12px;
+  color: rgba(255,255,255,0.8);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+.cov1 { background: linear-gradient(135deg, rgba(255,154,14,0.85), rgba(107,42,0,0.9)); }
+.cov2 { background: linear-gradient(135deg, rgba(43,108,255,0.85), rgba(11,26,61,0.9)); }
+.cov3 { background: linear-gradient(135deg, rgba(232,195,90,0.85), rgba(58,44,0,0.9)); }
+.cov4 { background: linear-gradient(135deg, rgba(236,72,153,0.85), rgba(61,11,37,0.9)); }
+.cov5 { background: linear-gradient(135deg, rgba(16,185,129,0.85), rgba(6,50,43,0.9)); }
+.cov6 { background: linear-gradient(135deg, rgba(168,85,247,0.85), rgba(42,16,72,0.9)); }
 
 .card .in {
   padding: 14px 18px;
@@ -349,25 +378,6 @@ h2 em {
   color: #111;
 }
 
-/* Stats */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 20px;
-  text-align: center;
-}
-.stats b {
-  font-family: "Bebas Neue", Impact, sans-serif;
-  font-size: 58px;
-  color: var(--o);
-  display: block;
-  line-height: 1;
-}
-.stats span {
-  color: var(--muted);
-  font-size: 14px;
-}
-
 /* Pay Online */
 .pay-box {
   display: grid;
@@ -379,15 +389,21 @@ h2 em {
   border-radius: 20px;
   padding: 34px;
 }
-.qr {
+.qr-container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.qr-card {
   background: #fff;
   border-radius: 16px;
   padding: 12px;
-  max-width: 260px;
-  margin: auto;
+  max-width: 250px;
   text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
-.qr img {
+.qr-card img {
   width: 100%;
   border-radius: 8px;
   display: block;
@@ -406,7 +422,7 @@ h2 em {
 /* Let's Work Together (Contact Section from Screenshot) */
 .work-together {
   text-align: center;
-  padding: 80px 6vw;
+  padding: 70px 6vw;
   background: radial-gradient(circle at center, rgba(255,154,14,0.08), transparent 70%);
 }
 .work-together h2 {
@@ -541,7 +557,8 @@ footer {
   <ul>
     <li><a href="#services">Services</a></li>
     <li><a href="#wedding">Wedding Videos</a></li>
-    <li><a href="#reels">Birthday &amp; Shorts</a></li>
+    <li><a href="#birthday">Birthday Reels</a></li>
+    <li><a href="#emotional">Reels Special</a></li>
     <li><a href="#work">Selected Work</a></li>
     <li><a href="#pay">Payment</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -621,22 +638,22 @@ footer {
   <h2>WEDDING <em>INVITATIONS</em></h2>
   <p class="sub">Tap Play to watch sample videos or click Select to order.</p>
   <div class="grid">
-    <div class="card" data-name="Wedding Invite - Traditional" data-price="699">
+    <div class="card" data-name="Royal Wedding Invitation" data-price="699">
       <div class="th"><iframe src="https://www.youtube.com/embed/xVo2EsDlNow" allowfullscreen loading="lazy"></iframe></div>
       <div class="in"><b>Royal Wedding Invitation</b><small>Animation · HD Video</small><span class="price-tag">Price: ₹699</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
     </div>
-    <div class="card" data-name="Wedding Invite - Cinematic" data-price="799">
+    <div class="card" data-name="Cinematic Lagn Patrika" data-price="799">
       <div class="th"><iframe src="https://www.youtube.com/embed/XTc9Yk_G0Bk" allowfullscreen loading="lazy"></iframe></div>
       <div class="in"><b>Cinematic Lagn Patrika</b><small>Custom Music · 4K</small><span class="price-tag">Price: ₹799</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
     </div>
-    <div class="card" data-name="Wedding Invite - Modern Floral" data-price="599">
+    <div class="card" data-name="Modern Floral Invitation" data-price="599">
       <div class="th"><iframe src="https://www.youtube.com/embed/iurooCncZeM" allowfullscreen loading="lazy"></iframe></div>
       <div class="in"><b>Modern Floral Invitation</b><small>Fast Delivery</small><span class="price-tag">Price: ₹599</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
     </div>
-    <div class="card" data-name="Wedding Invite - Premium Gold" data-price="899">
+    <div class="card" data-name="Premium Gold Invitation" data-price="899">
       <div class="th"><iframe src="https://www.youtube.com/embed/1uH-Hz82FiI" allowfullscreen loading="lazy"></iframe></div>
       <div class="in"><b>Premium Gold Invitation</b><small>Full Couple Story</small><span class="price-tag">Price: ₹899</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
@@ -644,95 +661,116 @@ footer {
   </div>
 </section>
 
-<!-- BIRTHDAY & SHORTS -->
-<section id="reels">
-  <h2>BIRTHDAY <em>&amp; REELS</em></h2>
-  <p class="sub">Vertical shorts and emotional edits.</p>
+<!-- BIRTHDAY WISHES REELS (Updated: 1st video replaced with RjuPfCzx0UE) -->
+<section id="birthday">
+  <h2>BIRTHDAY <em>WISHES REELS</em></h2>
+  <p class="sub">High-energy birthday vertical reels with trending music.</p>
   <div class="grid">
-    <div class="card" data-name="Birthday Reel 1" data-price="349">
-      <div class="th th-short"><iframe src="https://www.youtube.com/embed/RfuLzw7sPlk" allowfullscreen loading="lazy"></iframe></div>
-      <div class="in"><b>Birthday Wishes Reel</b><small>Trending Audio · Effects</small><span class="price-tag">Price: ₹349</span></div>
+    <div class="card" data-name="Birthday Wishes Reel (New Edit)" data-price="349">
+      <div class="th th-short"><iframe src="https://www.youtube.com/embed/RjuPfCzx0UE" allowfullscreen loading="lazy"></iframe></div>
+      <div class="in"><b>Birthday Wishes Reel (Special Edit)</b><small>Trending Audio · Glow Effects</small><span class="price-tag">Price: ₹349</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
     </div>
-    <div class="card" data-name="Birthday Reel 2" data-price="349">
+    <div class="card" data-name="Birthday Special Transition Edit" data-price="349">
       <div class="th th-short"><iframe src="https://www.youtube.com/embed/fKZLhiBXNb4" allowfullscreen loading="lazy"></iframe></div>
       <div class="in"><b>Special Birthday Edit</b><small>Photo Transition · 1080p</small><span class="price-tag">Price: ₹349</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
     </div>
-    <div class="card" data-name="Father & Baby Girl Video" data-price="499">
-      <div class="th th-short"><iframe src="https://www.youtube.com/embed/H8RjfBb0gtw" allowfullscreen loading="lazy"></iframe></div>
-      <div class="in"><b>Father &amp; Daughter Emotional Video</b><small>Storytelling Edit</small><span class="price-tag">Price: ₹499</span></div>
-      <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
-    </div>
     <div class="card">
       <div class="th th-short" style="color:var(--muted);text-align:center;padding:20px;display:flex;flex-direction:column;justify-content:center">
-        <b style="color:var(--o);font-size:20px">New Videos</b>
+        <b style="color:var(--o);font-size:20px">New Birthday Edits</b>
         <span>Uploading Tomorrow...</span>
       </div>
-      <div class="in"><b>Upcoming Edits</b><small>Stay tuned for new releases</small></div>
+      <div class="in"><b>Upcoming Birthday Reels</b><small>Stay tuned for new releases</small></div>
       <div class="sb"><button class="sel-btn" disabled style="opacity:.5">Coming Soon</button></div>
     </div>
   </div>
 </section>
 
-<!-- SELECTED WORK SECTION -->
+<!-- DEDICATED REELS SECTION: Father & Daughter Emotional Video -->
+<section id="emotional">
+  <h2>REELS <em>SPECIAL</em></h2>
+  <p class="sub">Emotional &amp; storytelling short-form video edits.</p>
+  <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 400px)); justify-content: center;">
+    <div class="card" data-name="Father & Daughter Emotional Video" data-price="499">
+      <div class="th th-short"><iframe src="https://www.youtube.com/embed/H8RjfBb0gtw" allowfullscreen loading="lazy"></iframe></div>
+      <div class="in"><b>Father &amp; Daughter Emotional Video</b><small>Heartfelt Storytelling · Cinematic Color</small><span class="price-tag">Price: ₹499</span></div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED WORK SECTION (Clean stylized thumbnails with select buttons) -->
 <section id="work">
   <h2>SELECTED <em>WORK</em></h2>
   <p class="sub">Tap "Select" on the works you like, then send your choices to me on WhatsApp.</p>
   <div class="grid">
     <div class="card" data-name="Wedding Invitation Video Sample" data-price="699">
-      <div class="th t1"></div>
+      <div class="th-cover cov1">
+        <span>WEDDING INVITATION</span>
+        <small>Animated Card · 1 Min HD</small>
+      </div>
       <div class="in"><b>Wedding Invitation Video</b><small>Video · 1 min</small><span class="price-tag">₹699</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select</button></div>
     </div>
     <div class="card" data-name="Brand Logo Design Sample" data-price="499">
-      <div class="th t2"></div>
+      <div class="th-cover cov2">
+        <span>LOGO &amp; BRANDING</span>
+        <small>Vector · High Resolution</small>
+      </div>
       <div class="in"><b>Brand Logo Design</b><small>Logo · Branding</small><span class="price-tag">₹499</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select</button></div>
     </div>
     <div class="card" data-name="Event Poster Sample" data-price="299">
-      <div class="th t3"></div>
+      <div class="th-cover cov3">
+        <span>EVENT POSTER</span>
+        <small>Print Ready · Social Media</small>
+      </div>
       <div class="in"><b>Event Poster</b><small>Poster · Print</small><span class="price-tag">₹299</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select</button></div>
     </div>
     <div class="card" data-name="Birthday Banner Sample" data-price="249">
-      <div class="th t4"></div>
+      <div class="th-cover cov4">
+        <span>BIRTHDAY BANNER</span>
+        <small>HD Flex · Custom Photo</small>
+      </div>
       <div class="in"><b>Birthday Banner</b><small>Banner · Flex</small><span class="price-tag">₹249</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select</button></div>
     </div>
     <div class="card" data-name="Instagram Reels Sample" data-price="349">
-      <div class="th t5"></div>
+      <div class="th-cover cov5">
+        <span>INSTAGRAM REELS</span>
+        <small>Transitions · Color Grading</small>
+      </div>
       <div class="in"><b>Instagram Reels</b><small>Video · Short-form</small><span class="price-tag">₹349</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select</button></div>
     </div>
     <div class="card" data-name="Business Card Sample" data-price="299">
-      <div class="th t6"></div>
+      <div class="th-cover cov6">
+        <span>BUSINESS CARD</span>
+        <small>Double Sided · Minimalist</small>
+      </div>
       <div class="in"><b>Business Card</b><small>Print design</small><span class="price-tag">₹299</span></div>
       <div class="sb"><button class="sel-btn" type="button">+ Select</button></div>
     </div>
   </div>
 </section>
 
-<!-- COUNTER / STATS -->
-<section>
-  <div class="stats">
-    <div><b>500+</b><span>Designs delivered</span></div>
-    <div><b>150+</b><span>Videos edited</span></div>
-    <div><b>100+</b><span>Happy clients</span></div>
-    <div><b>4+</b><span>Years experience</span></div>
-  </div>
-</section>
-
-<!-- PAY ONLINE -->
+<!-- PAY ONLINE (Navi UPI QR Code + Instagram QR Code) -->
 <section id="pay">
   <div class="pay-box">
-    <div class="qr">
-      <img alt="UPI Payment QR Code - Madhav Bhart Kadam" src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=upi://pay?pa=8830562057@naviaxis&pn=Madhav%20Bhart%20Kadam&cu=INR">
-      <small style="color:#555;font-weight:600;margin-top:6px;display:block">MADHAV BHART KADAM</small>
+    <div class="qr-container">
+      <div class="qr-card">
+        <img alt="Navi UPI QR - Madhav Bhart Kadam" src="navi_qr.jpg">
+      </div>
+      <div class="qr-card" style="max-width:200px">
+        <img alt="Instagram QR - @kadammadhav888" src="ig_qr.jpg">
+        <small style="color:#555;font-weight:700;display:block;margin-top:6px">@kadammadhav888</small>
+      </div>
     </div>
     <div>
       <h2>PAY <em>ONLINE</em></h2>
-      <p class="sub" style="margin-bottom:6px">Scan the QR or tap the button. Works with PhonePe, Google Pay, Paytm and any UPI app.</p>
+      <p class="sub" style="margin-bottom:6px">Scan the QR or tap the button below. Works with PhonePe, Google Pay, Paytm, Navi and all UPI apps.</p>
       <div class="upi-text" id="upi">8830562057@naviaxis</div><br>
       <div class="cta">
         <a class="btn" href="upi://pay?pa=8830562057@naviaxis&pn=Madhav%20Bhart%20Kadam&cu=INR">Pay with UPI</a>
@@ -742,7 +780,7 @@ footer {
   </div>
 </section>
 
-<!-- LET'S WORK TOGETHER (Contact Section from Screenshot) -->
+<!-- LET'S WORK TOGETHER (Contact Section exactly from your screenshot) -->
 <section class="work-together" id="contact">
   <h2>LET’S WORK TOGETHER</h2>
   <p class="sub-text">Tell me about your project, I reply fast.</p>
@@ -832,11 +870,11 @@ function updateBar(){
     sl.textContent = names.join(', ');
 
     // WhatsApp Message Creation
-    var msg = 'Hello Madhav,\\nI have selected these works from your portfolio:\\n\\n';
+    var msg = 'Hello Madhav,\nI have selected these works from your portfolio:\n\n';
     selectedItems.forEach(function(item, idx){
-      msg += (idx + 1) + '. ' + item.name + ' - ₹' + item.price + '\\n';
+      msg += (idx + 1) + '. ' + item.name + ' - ₹' + item.price + '\n';
     });
-    msg += '\\nTotal Estimated: ₹' + total + '\\n';
+    msg += '\nTotal Estimated: ₹' + total + '\n';
     msg += 'Please let me know how we can proceed with the order.';
     sw.href = 'https://wa.me/918830562057?text=' + encodeURIComponent(msg);
   } else {
