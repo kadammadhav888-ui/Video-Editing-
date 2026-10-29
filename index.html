@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Madhav Kadam — Graphic Designer &amp; Video Editor | Imortal Artist</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#121214;--bg2:#1b1b1f;--text:#f5f3ee;--muted:#a3a3ad;--o:#ff9a0e;--gold:#e8c35a;--line:#2b2b31;color-scheme:dark;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:radial-gradient(900px 520px at 88% -4%,rgba(255,154,14,.16),transparent 62%),radial-gradient(700px 520px at -8% 38%,rgba(255,154,14,.08),transparent 60%),radial-gradient(800px 500px at 60% 105%,rgba(232,195,90,.07),transparent 60%),var(--bg);background-attachment:fixed;color:var(--text);font-family:Poppins,"Segoe UI",Arial,sans-serif;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;opacity:.35}
+h1,h2,.bb{font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif;font-weight:400;letter-spacing:1px}
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 6vw;background:rgba(18,18,20,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand b{font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:2px;line-height:1}.brand b i{color:var(--o);font-style:normal}
+nav ul{display:flex;gap:26px;list-style:none;font-size:14px;color:var(--muted)}
+nav ul a:hover{color:var(--o)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;font-weight:600;font-size:14px;border:2px solid var(--o);background:var(--o);color:#111;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,154,14,.35)}
+.btn.o{background:none;color:var(--text)}.btn.wa{background:#25d366;border-color:#25d366;color:#fff}
+.diwali-banner{background:linear-gradient(90deg,#ff9a0e,#ff3d00,#e8c35a);color:#111;text-align:center;padding:8px 12px;font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.diwali-banner a{background:#111;color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;text-decoration:none}
+section{padding:70px 6vw;max-width:1150px;margin:auto}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;min-height:80vh}
+.hi{color:var(--o);letter-spacing:4px;font-size:13px;text-transform:uppercase}
+h1{font-size:clamp(50px,9vw,100px);line-height:.95;color:var(--o);margin:8px 0 6px}
+.role{font-family:"Bebas Neue",Impact,sans-serif;font-size:clamp(24px,4vw,40px);letter-spacing:2px;min-height:1.3em}
+.role:after{content:"|";color:var(--o);animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.hero p.d{color:var(--muted);max-width:48ch;margin:16px 0 24px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.strip{background:linear-gradient(90deg,#ff9a0e,#ffb347,#ff9a0e);color:#111;overflow:hidden;white-space:nowrap;padding:12px 0}
+.strip div{display:inline-block;animation:mq 25s linear infinite;font-family:"Bebas Neue",Impact,sans-serif;font-size:24px;letter-spacing:2px}
+.strip span{margin:0 20px}@keyframes mq{to{transform:translateX(-50%)}}
+h2{font-size:clamp(34px,5vw,52px);line-height:1}h2 em{font-style:normal;color:var(--o)}
+.sub{color:var(--muted);margin:8px 0 30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-4px);border-color:var(--o)}
+.card.selected{border-color:var(--o);box-shadow:0 0 0 2px var(--o)}
+.svc{padding:24px}.svc .n{font-family:"Bebas Neue",Impact,sans-serif;color:var(--o);font-size:32px;line-height:1}.svc h3{margin:6px 0;font-size:18px}.svc p{color:var(--muted);font-size:14px}
+.th{aspect-ratio:16/9;position:relative;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.th iframe{width:100%;height:100%;border:0}
+.th-short{aspect-ratio:9/16;max-height:360px;margin:auto;width:100%}
+.card .in{padding:14px 18px}.card .in b{font-size:16px;display:block}.card .in small{color:var(--muted)}
+.price-tag{display:inline-block;margin-top:6px;background:rgba(255,154,14,.15);border:1px solid var(--o);color:var(--o);font-weight:600;font-size:13px;padding:2px 8px;border-radius:6px}
+.sb{padding:12px 18px 16px}
+.sel-btn{width:100%;padding:8px 14px;border-radius:999px;border:2px solid var(--o);background:none;color:var(--text);font-family:inherit;font-weight:600;font-size:13px;cursor:pointer;transition:.2s}
+.sel-btn:hover{background:rgba(255,154,14,.15)}
+.card.selected .sel-btn{background:var(--o);color:#111}
+#sbar{position:fixed;left:50%;bottom:15px;transform:translate(-50%,150%);z-index:90;width:min(700px,calc(100% - 30px));background:var(--bg2);border:2px solid var(--o);border-radius:16px;padding:12px 18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;box-shadow:0 12px 30px rgba(0,0,0,.6);transition:transform .3s ease}
+#sbar.show{transform:translate(-50%,0)}
+#sbar .tx{flex:1;min-width:180px;font-size:13px;line-height:1.4}
+#sbar .tx b{color:var(--o);font-size:15px}
+#sbar .tx span{display:block;color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:320px}
+.fab{position:fixed;right:20px;bottom:20px;z-index:80;width:54px;height:54px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.fab svg{width:30px;height:30px;fill:#fff}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:24px;border-top:1px solid var(--line);margin-bottom:60px}
+@media(max-width:768px){nav ul{display:none}.hero{grid-template-columns:1fr;min-height:auto}}
+</style>
+</head>
+<body>
+
+<div class="diwali-banner">
+  ✨ <b>Diwali Special Offer!</b> Get Flat 25% Off on Wedding Cards & Video Editing 🪔
+  <a href="https://wa.me/918830562057?text=Hello%20Madhav%2C%20I%20want%20to%20claim%20the%20Diwali%20Special%20Offer!" target="_blank">Claim on WhatsApp</a>
+</div>
+
+<nav>
+  <div class="brand"><b>IMORTAL <i>ARTIST</i></b></div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#wedding">Wedding Videos</a></li>
+    <li><a href="#reels">Birthday & Shorts</a></li>
+    <li><a href="#work">Designs</a></li>
+  </ul>
+  <a class="btn wa" href="https://wa.me/918830562057?text=Hello%20Madhav%2C%20I%20need%20a%20design%20or%20video%20edit." target="_blank">WhatsApp</a>
+</nav>
+
+<section class="hero" id="top">
+  <div>
+    <div class="hi">Hello, I’m</div>
+    <h1>MADHAV<br>KADAM</h1>
+    <div class="role" id="role"></div>
+    <p class="d">Posters, logos, wedding invitations and cinematic video editing. Professional quality delivered quickly across India.</p>
+    <div class="cta">
+      <a class="btn wa" href="https://wa.me/918830562057?text=Hello%20Madhav%2C%20I%20want%20to%20discuss%20a%20project." target="_blank">Chat on WhatsApp</a>
+      <a class="btn o" href="tel:+918830562057">Call Now</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><div><span>POSTER DESIGN</span>★<span>LOGO DESIGN</span>★<span>BUSINESS CARD</span>★<span>BIRTHDAY REELS</span>★<span>WEDDING INVITATION</span>★<span>LAGN PATRIKA</span>★<span>VIDEO EDITING</span>★</div></div>
+
+<!-- SERVICES SECTION -->
+<section id="services">
+  <h2>MY <em>SERVICES</em></h2>
+  <p class="sub">Select any service or project below to send directly to WhatsApp.</p>
+  <div class="grid">
+    <div class="card svc" data-name="Poster & Event Design" data-price="299">
+      <div>
+        <div class="n">01</div>
+        <h3>Poster &amp; Event Design</h3>
+        <p>Eye-catching posters, banners, and event creatives.</p>
+        <span class="price-tag">Starting ₹299</span>
+      </div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Service</button></div>
+    </div>
+    <div class="card svc" data-name="Logo & Business Card" data-price="499">
+      <div>
+        <div class="n">02</div>
+        <h3>Logo &amp; Business Card</h3>
+        <p>Clean, memorable branding and print-ready visiting cards.</p>
+        <span class="price-tag">Starting ₹499</span>
+      </div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Service</button></div>
+    </div>
+    <div class="card svc" data-name="Lagn Patrika & Wedding Video" data-price="699">
+      <div>
+        <div class="n">03</div>
+        <h3>Lagn Patrika &amp; Invitation Video</h3>
+        <p>Traditional wedding cards and animated invitation videos.</p>
+        <span class="price-tag">Starting ₹699</span>
+      </div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Service</button></div>
+    </div>
+    <div class="card svc" data-name="Video Editing & Reels" data-price="399">
+      <div>
+        <div class="n">04</div>
+        <h3>Video Editing</h3>
+        <p>Instagram Reels, YouTube videos, and promos with color grading.</p>
+        <span class="price-tag">Starting ₹399</span>
+      </div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Service</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- WEDDING VIDEOS -->
+<section id="wedding">
+  <h2>WEDDING <em>INVITATIONS</em></h2>
+  <p class="sub">Tap Play to watch sample videos or click Select to order.</p>
+  <div class="grid">
+    <div class="card" data-name="Wedding Invite - Traditional" data-price="699">
+      <div class="th"><iframe src="https://www.youtube.com/embed/xVo2EsDlNow" allowfullscreen loading="lazy"></iframe></div>
+      <div class="in"><b>Royal Wedding Invitation</b><small>Animation · HD Video</small><span class="price-tag">Price: ₹699</span></div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
+    </div>
+    <div class="card" data-name="Wedding Invite - Cinematic" data-price="799">
+      <div class="th"><iframe src="https://www.youtube.com/embed/XTc9Yk_G0Bk" allowfullscreen loading="lazy"></iframe></div>
+      <div class="in"><b>Cinematic Lagn Patrika</b><small>Custom Music · 4K</small><span class="price-tag">Price: ₹799</span></div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
+    </div>
+    <div class="card" data-name="Wedding Invite - Modern Floral" data-price="599">
+      <div class="th"><iframe src="https://www.youtube.com/embed/iurooCncZeM" allowfullscreen loading="lazy"></iframe></div>
+      <div class="in"><b>Modern Floral Invitation</b><small>Fast Delivery</small><span class="price-tag">Price: ₹599</span></div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
+    </div>
+    <div class="card" data-name="Wedding Invite - Premium Gold" data-price="899">
+      <div class="th"><iframe src="https://www.youtube.com/embed/1uH-Hz82FiI" allowfullscreen loading="lazy"></iframe></div>
+      <div class="in"><b>Premium Gold Invitation</b><small>Full Couple Story</small><span class="price-tag">Price: ₹899</span></div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIRTHDAY & SHORTS -->
+<section id="reels">
+  <h2>BIRTHDAY <em>&amp; REELS</em></h2>
+  <p class="sub">Vertical shorts and emotional edits.</p>
+  <div class="grid">
+    <div class="card" data-name="Birthday Reel 1" data-price="349">
+      <div class="th th-short"><iframe src="https://www.youtube.com/embed/RfuLzw7sPlk" allowfullscreen loading="lazy"></iframe></div>
+      <div class="in"><b>Birthday Wishes Reel</b><small>Trending Audio · Effects</small><span class="price-tag">Price: ₹349</span></div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
+    </div>
+    <div class="card" data-name="Birthday Reel 2" data-price="349">
+      <div class="th th-short"><iframe src="https://www.youtube.com/embed/fKZLhiBXNb4" allowfullscreen loading="lazy"></iframe></div>
+      <div class="in"><b>Special Birthday Edit</b><small>Photo Transition · 1080p</small><span class="price-tag">Price: ₹349</span></div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
+    </div>
+    <div class="card" data-name="Father & Baby Girl Video" data-price="499">
+      <div class="th th-short"><iframe src="https://www.youtube.com/embed/H8RjfBb0gtw" allowfullscreen loading="lazy"></iframe></div>
+      <div class="in"><b>Father &amp; Daughter Emotional Video</b><small>Storytelling Edit</small><span class="price-tag">Price: ₹499</span></div>
+      <div class="sb"><button class="sel-btn" type="button">+ Select Work</button></div>
+    </div>
+    <div class="card">
+      <div class="th th-short" style="color:var(--muted);text-align:center;padding:20px;display:flex;flex-direction:column;justify-content:center">
+        <b style="color:var(--o);font-size:20px">New Videos</b>
+        <span>Uploading Tomorrow...</span>
+      </div>
+      <div class="in"><b>Upcoming Edits</b><small>Stay tuned for new releases</small></div>
+      <div class="sb"><button class="sel-btn" disabled style="opacity:.5">Coming Soon</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED ITEMS STICKY BAR -->
+<div id="sbar">
+  <div class="tx">
+    <b id="sc">0 Items Selected</b>
+    <span id="sl">None</span>
+  </div>
+  <button class="btn o" id="sx" type="button">Clear</button>
+  <a class="btn wa" id="sw" href="#" target="_blank">Send on WhatsApp</a>
+</div>
+
+<footer>© 2026 Madhav Kadam · Imortal Artist. All rights reserved.</footer>
+
+<a class="fab" href="https://wa.me/918830562057?text=Hello%20Madhav%2C%20I%20have%20an%20inquiry." target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11 19.8L3 29l6.4-2A13 13 0 1 0 16 3zm0 2.4a10.6 10.6 0 1 1-5.6 19.6l-.4-.2-3.8 1.2 1.2-3.7-.3-.4A10.6 10.6 0 0 1 16 5.4zm-4 5.2c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.1s1.4 3.6 1.5 3.8c.2.2 2.6 4.1 6.4 5.6 3.2 1.2 3.8 1 4.5.9.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5s-2.2-1.1-2.5-1.2c-.3-.1-.6-.2-.8.2-.2.4-1 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.6.1-.3.1-.5 0-.7l-1.1-2.7c-.3-.7-.6-.6-.8-.6z"/></svg>
+</a>
+
+<script>
+// Typing Animation
+var R=['Graphic Designer','Video Editor','Invitation Creator'],i=0,j=0,del=false,el=document.getElementById('role');
+function ty(){var w=R[i];j+=del?-1:1;el.textContent=w.slice(0,j);var t=del?40:80;if(!del&&j===w.length){del=true;t=1200}else if(del&&j===0){del=false;i=(i+1)%R.length;t=250}setTimeout(ty,t)}ty();
+
+// Selection & WhatsApp Logic
+var selectedItems = [];
+var sbar = document.getElementById('sbar');
+var sc = document.getElementById('sc');
+var sl = document.getElementById('sl');
+var sw = document.getElementById('sw');
+var sx = document.getElementById('sx');
+
+document.querySelectorAll('.card[data-name]').forEach(function(card){
+  var btn = card.querySelector('.sel-btn');
+  if(!btn) return;
+  btn.onclick = function(){
+    var name = card.getAttribute('data-name');
+    var price = parseInt(card.getAttribute('data-price') || '0', 10);
+    var index = selectedItems.findIndex(function(x){ return x.name === name; });
+
+    if(index > -1){
+      selectedItems.splice(index, 1);
+      card.classList.remove('selected');
+      btn.textContent = '+ Select Work';
+    } else {
+      selectedItems.push({ name: name, price: price });
+      card.classList.add('selected');
+      btn.textContent = '✓ Selected';
+    }
+    updateBar();
+  };
+});
+
+function updateBar(){
+  if(selectedItems.length > 0){
+    sbar.classList.add('show');
+    var total = selectedItems.reduce(function(acc, curr){ return acc + curr.price; }, 0);
+    sc.textContent = selectedItems.length + ' Item(s) Selected (Total: ₹' + total + ')';
+    var names = selectedItems.map(function(x){ return x.name + ' (₹' + x.price + ')'; });
+    sl.textContent = names.join(', ');
+
+    // WhatsApp Message creation
+    var msg = 'Hello Madhav,\nI have selected these works from your portfolio:\n\n';
+    selectedItems.forEach(function(item, idx){
+      msg += (idx + 1) + '. ' + item.name + ' - ₹' + item.price + '\n';
+    });
+    msg += '\nTotal Estimated: ₹' + total + '\n';
+    msg += 'Please let me know how we can proceed with the order.';
+    sw.href = 'https://wa.me/918830562057?text=' + encodeURIComponent(msg);
+  } else {
+    sbar.classList.remove('show');
+  }
+}
+
+sx.onclick = function(){
+  selectedItems = [];
+  document.querySelectorAll('.card.selected').forEach(function(c){
+    c.classList.remove('selected');
+    var b = c.querySelector('.sel-btn');
+    if(b) b.textContent = '+ Select Work';
+  });
+  updateBar();
+};
+</script>
+</body>
+</html>
