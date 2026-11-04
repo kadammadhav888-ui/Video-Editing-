@@ -34,6 +34,7 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
 }
 a {
   color: inherit;
@@ -43,6 +44,115 @@ h1, h2, .bb {
   font-family: "Bebas Neue", Impact, sans-serif;
   font-weight: 400;
   letter-spacing: 1px;
+}
+
+/* Ambient 3D Background Lighting */
+.ambient-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.28;
+  animation: floatOrb 14s ease-in-out infinite alternate;
+}
+.orb-1 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, var(--o), transparent 70%);
+  top: -60px;
+  right: -60px;
+}
+.orb-2 {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, var(--gold), transparent 70%);
+  top: 45%;
+  left: -80px;
+  animation-duration: 18s;
+  animation-delay: -5s;
+}
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 40px) scale(1.08); }
+  100% { transform: translate(-25px, 20px) scale(0.95); }
+}
+
+/* 3D Hero Photo Card */
+.hero-3d-wrap {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.hero-3d-card {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 3 / 4;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255, 154, 14, 0.15), rgba(27, 27, 31, 0.95));
+  border: 2px solid rgba(255, 154, 14, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 154, 14, 0.25);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+.hero-3d-card:hover {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 50px rgba(255, 154, 14, 0.45);
+  border-color: var(--o);
+}
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px) rotateY(0deg) rotateX(0deg); }
+  50% { transform: translateY(-10px) rotateY(2deg) rotateX(2deg); }
+}
+.hero-3d-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05) saturate(1.05);
+  border-radius: 22px;
+}
+.hero-badge {
+  position: absolute;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+.badge-top {
+  top: 16px;
+  right: 16px;
+  background: rgba(18, 18, 20, 0.85);
+  border: 1.5px solid var(--o);
+  color: var(--o);
+}
+.badge-bottom {
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(255, 154, 14, 0.9), rgba(232, 195, 90, 0.95));
+  color: #111;
+  border: 1.5px solid #fff;
+}
+
+/* Scroll Reveal Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Diwali Special Offer */
@@ -155,6 +265,8 @@ section {
   padding: 65px 6vw;
   max-width: 1150px;
   margin: auto;
+  position: relative;
+  z-index: 1;
 }
 .hero {
   display: grid;
@@ -207,6 +319,8 @@ h1 {
   overflow: hidden;
   white-space: nowrap;
   padding: 12px 0;
+  position: relative;
+  z-index: 1;
 }
 .strip div {
   display: inline-block;
@@ -329,8 +443,8 @@ h2 em {
 .cov2 { background: linear-gradient(135deg, rgba(43,108,255,0.85), rgba(11,26,61,0.9)); }
 .cov3 { background: linear-gradient(135deg, rgba(232,195,90,0.85), rgba(58,44,0,0.9)); }
 .cov4 { background: linear-gradient(135deg, rgba(236,72,153,0.85), rgba(61,11,37,0.9)); }
-.cov5 { background: linear-gradient(135deg, rgba(168,85,247,0.85), rgba(42,16,72,0.9)); }
-.cov6 { background: linear-gradient(135deg, rgba(16,185,129,0.85), rgba(6,50,43,0.9)); }
+.cov5 { background: linear-gradient(135deg, rgba(16,185,129,0.85), rgba(6,50,43,0.9)); }
+.cov6 { background: linear-gradient(135deg, rgba(168,85,247,0.85), rgba(42,16,72,0.9)); }
 
 .card .in {
   padding: 14px 18px;
@@ -545,15 +659,22 @@ footer {
   padding: 26px;
   border-top: 1px solid var(--line);
   margin-bottom: 70px;
+  position: relative;
+  z-index: 1;
 }
 
 @media(max-width: 768px) {
   nav ul { display: none; }
   .hero, .pay-box { grid-template-columns: 1fr; }
+  .hero-3d-wrap { margin-top: 24px; }
 }
 </style>
 </head>
 <body>
+
+<!-- Ambient 3D Glowing Background Orbs -->
+<div class="ambient-orb orb-1"></div>
+<div class="ambient-orb orb-2"></div>
 
 <!-- Diwali Offer Banner -->
 <div class="diwali-banner">
@@ -576,8 +697,8 @@ footer {
   <a class="btn wa" href="https://wa.me/918830562057?text=Hello%20Madhav%2C%20I%20need%20a%20design%20or%20video%20edit." target="_blank">WhatsApp</a>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero" id="top">
+<!-- Hero Section with 3D Photo Card -->
+<section class="hero reveal-on-scroll" id="top">
   <div>
     <div class="hi">Hello, I’m</div>
     <h1>MADHAV<br>KADAM</h1>
@@ -590,6 +711,13 @@ footer {
       <a class="btn o" href="#pay">Pay Online</a>
     </div>
   </div>
+  <div class="hero-3d-wrap" id="hero3dWrap">
+    <div class="hero-3d-card" id="hero3dCard">
+      <img src="hero_portrait.jpg" onerror="this.onerror=null;this.src='hero_portrait.jpg';" alt="Madhav Kadam - Graphic Designer & Video Editor">
+      <div class="hero-badge badge-top">🎬 Professional Editor</div>
+      <div class="hero-badge badge-bottom">⭐ 50+ Projects Done</div>
+    </div>
+  </div>
 </section>
 
 <!-- Running Strip -->
@@ -600,7 +728,7 @@ footer {
 </div>
 
 <!-- ALL SERVICES SECTION -->
-<section id="services">
+<section id="services" class="reveal-on-scroll">
   <h2>MY <em>SERVICES</em></h2>
   <p class="sub">Complete Video Editing, Shoot &amp; Graphic Design Services. Tap select on any service to order on WhatsApp.</p>
   <div class="grid">
@@ -687,7 +815,7 @@ footer {
 </section>
 
 <!-- PORTFOLIO NOTICE BANNER -->
-<section style="padding: 20px 6vw 40px; max-width: 1150px; margin: auto;">
+<section style="padding: 20px 6vw 40px; max-width: 1150px; margin: auto;" class="reveal-on-scroll">
   <div style="background: linear-gradient(135deg, rgba(255, 154, 14, 0.15), rgba(27, 27, 31, 0.95)); border: 2px solid var(--o); border-radius: 20px; padding: 28px 24px; text-align: center; box-shadow: 0 10px 30px rgba(255, 154, 14, 0.2);">
     <div style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(32px, 5vw, 48px); color: var(--o); letter-spacing: 2px; margin-bottom: 8px;">
       EXPERIENCED IN 50+ PROJECTS 🎬
@@ -702,7 +830,7 @@ footer {
 </section>
 
 <!-- WEDDING VIDEOS -->
-<section id="wedding">
+<section id="wedding" class="reveal-on-scroll">
   <h2>WEDDING INVITATIONS <em>DEMO FEW</em></h2>
   <p class="sub">Tap Play to watch sample videos or click Select to order.</p>
   <div class="grid">
@@ -740,7 +868,7 @@ footer {
 </section>
 
 <!-- BIRTHDAY WISHES REELS -->
-<section id="birthday">
+<section id="birthday" class="reveal-on-scroll">
   <h2>BIRTHDAY <em>WISHES REELS</em></h2>
   <p class="sub">High-energy birthday vertical reels with trending music.</p>
   <div class="grid">
@@ -771,7 +899,7 @@ footer {
 </section>
 
 <!-- DEDICATED REELS SPECIAL SECTION -->
-<section id="emotional">
+<section id="emotional" class="reveal-on-scroll">
   <h2>REELS <em>SPECIAL</em></h2>
   <p class="sub">Emotional, cinematic &amp; storytelling short-form video edits.</p>
   <div class="grid">
@@ -798,8 +926,8 @@ footer {
   </div>
 </section>
 
-<!-- CUSTOM VIDEO & REELS EDITING NOTICE (FOR ALL CLIENTS) -->
-<section style="padding: 10px 6vw 40px; max-width: 1150px; margin: auto;">
+<!-- CUSTOM VIDEO & REELS EDITING NOTICE -->
+<section style="padding: 10px 6vw 40px; max-width: 1150px; margin: auto;" class="reveal-on-scroll">
   <div style="background: linear-gradient(135deg, rgba(255, 154, 14, 0.18), rgba(20, 20, 24, 0.95)); border: 2.5px solid var(--o); border-radius: 22px; padding: 34px 26px; text-align: center; box-shadow: 0 12px 35px rgba(255, 154, 14, 0.25);">
     <div style="display: inline-block; background: var(--o); color: #111; font-weight: 800; font-size: 12px; letter-spacing: 2px; padding: 5px 16px; border-radius: 999px; text-transform: uppercase; margin-bottom: 12px;">
       ✨ CUSTOM EDITING AVAILABLE
@@ -825,7 +953,7 @@ footer {
 </section>
 
 <!-- SELECTED WORK SECTION -->
-<section id="work">
+<section id="work" class="reveal-on-scroll">
   <h2>SELECTED <em>WORK</em></h2>
   <p class="sub">Tap "Select" on the works you like, then send your choices to me on WhatsApp.</p>
   <div class="grid">
@@ -881,7 +1009,7 @@ footer {
 </section>
 
 <!-- PAY ONLINE (Navi UPI QR Code) -->
-<section id="pay">
+<section id="pay" class="reveal-on-scroll">
   <div class="pay-box">
     <div class="qr-container">
       <div class="qr-card">
@@ -901,7 +1029,7 @@ footer {
 </section>
 
 <!-- LET'S WORK TOGETHER (Contact Section) -->
-<section class="work-together" id="contact">
+<section class="work-together reveal-on-scroll" id="contact">
   <h2>LET’S WORK TOGETHER</h2>
   <p class="sub-text">Tell me about your project, I reply fast.</p>
   <a class="phone-num" href="tel:+918830562057">88305 62057</a>
@@ -1012,6 +1140,37 @@ sx.onclick = function(){
   });
   updateBar();
 };
+
+// 3D Card Interactive Tilt Effect
+var heroCard = document.getElementById('hero3dCard');
+var heroWrap = document.getElementById('hero3dWrap');
+if (heroCard && heroWrap) {
+  heroWrap.addEventListener('mousemove', function(e) {
+    var rect = heroWrap.getBoundingClientRect();
+    var x = e.clientX - rect.left - rect.width / 2;
+    var y = e.clientY - rect.top - rect.height / 2;
+    heroCard.style.transform = 'rotateY(' + (x / 12) + 'deg) rotateX(' + (-y / 12) + 'deg) translateY(-8px)';
+  });
+  heroWrap.addEventListener('mouseleave', function() {
+    heroCard.style.transform = '';
+  });
+}
+
+// Scroll Reveal Animations for Sections and Cards
+if ('IntersectionObserver' in window) {
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section, .card').forEach(function(el) {
+    el.classList.add('reveal-on-scroll');
+    revealObserver.observe(el);
+  });
+}
 </script>
 </body>
 </html>
